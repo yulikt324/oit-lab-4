@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arusa - Інтернет-магазин меблів</title>
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/custom.css">
+</head>
+<body>
+
+    <!-- 1. ШАПКА САЙТУ -->
+    <header id="top">
+        <div class="logo">Arusa Studio</div>
+        
+        <input type="checkbox" id="menu-toggle">
+        <label for="menu-toggle" class="burger-icon">&#9776;</label>
+
+        <nav>
+            <ul class="main-menu">
+                <li><a href="#home">Головна</a></li>
+                <li class="dropdown">
+                    <a href="#shop">Магазин &#9662;</a>
+                    <ul class="submenu">
+                        <li><a href="#shop">Стільці</a></li>
+                        <li><a href="#shop">Освітлення</a></li>
+                        <li><a href="#shop">Декор</a></li>
+                    </ul>
+                </li>
+                <li><a href="about.html">Про нас</a></li>
+                <li><a href="#reviews">Відгуки</a></li>
+                <li><a href="#quiz">Анкета</a></li>
+            </ul>
+        </nav>
+
+        <div class="header-actions">
+            <div class="search-box">
+                <form action="#shop" method="get">
+                    <input type="search" placeholder="Search..." required>
+                    <button type="submit" aria-label="Пошук">&#128269;</button>
+                </form>
+            </div>
+            <a href="#login-modal" class="sign-in-btn">Sign in</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- 2. ГОЛОВНИЙ БАНЕР -->
+        <section id="home">
+            <h1>Seamless interiors with natural elements</h1>
+            <p>Creating perfect spaces and inspiring layout ideas.</p>
+            <a href="#shop" class="btn-primary">Дивитися каталог</a>
+        </section>
+
+        <!-- БЛОК ІЗ ПРЕПРОЦЕСОРА SASS -->
+        <section class="promo-banner">
+            <h2>Нова осіння колекція</h2>
+            <p>Отримайте знижку 15% на всі предмети інтер'єру при замовленні через сайт.</p>
+        </section>
+
+        <!-- 3. КАТАЛОГ ТОВАРІВ (СІТКА GRID + ДЕКОРАТИВНИЙ СПІНЕР) -->
+        <section id="shop">
+            <h2>Популярні товари (Shop)</h2>
+            <div class="products-grid">
+                <article class="product-card">
+                    <div class="img-wrapper">
+                        <img src="images/chair.jpg" alt="Дерев'яний стілець Arusa">
+                        <div class="img-overlay">HOME DECORATION</div>
+                    </div>
+                    <h3>Дерев'яний стілець</h3>
+                    <p>Елегантний стілець з натурального дерева для вітальні.</p>
+                    <div class="card-bottom">
+                        <span>Ціна: 2 400 грн</span>
+                        <button type="button">Купити</button>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <div class="img-wrapper">
+                        <img src="images/chair.jpg" alt="Обідній стіл з дуба">
+                        <div class="img-overlay">MINIMALIST STYLE</div>
+                    </div>
+                    <h3>Обідній стіл</h3>
+                    <p>Великий родинний стіл у мінімалістичному стилі.</p>
+                    <div class="card-bottom">
+                        <span>Ціна: 8 500 грн</span>
+                        <button type="button">Купити</button>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <div class="img-wrapper">
+                        <img src="images/lamp.jpg" alt="Підвісний світильник Arusa">
+                        <div class="img-overlay">LIGHTING</div>
+                    </div>
+                    <h3>Підвісний світильник</h3>
+                    <p>Мінімалістичний латунний світильник з м'яким теплим світлом.</p>
+                    <div class="card-bottom">
+                        <span>Ціна: 3 200 грн</span>
+                        <button type="button">Купити</button>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <div class="img-wrapper">
+                        <img src="images/nightstand.jpg" alt="Приліжкова тумба з ротангом">
+                        <div class="img-overlay">BEDROOM FURNITURE</div>
+                    </div>
+                    <h3>Приліжкова тумба</h3>
+                    <p>Біла дерев'яна тумба з плетеною вставкою з натурального ротанга.</p>
+                    <div class="card-bottom">
+                        <span>Ціна: 3 800 грн</span>
+                        <button type="button">Купити</button>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <div class="img-wrapper">
+                        <img src="images/sofa.jpg" alt="Диван у вітальню">
+                        <div class="img-overlay">SOFT FURNITURE</div>
+                    </div>
+                    <h3>Сучасний диван</h3>
+                    <p>Зручний диван з фактурної тканини у стриманому відтінку.</p>
+                    <div class="card-bottom">
+                        <span>Ціна: 14 600 грн</span>
+                        <button type="button">Купити</button>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- 4. КАРУСЕЛЬ ВІДГУКІВ -->
+        <section id="reviews">
+            <h2>Відгуки наших клієнтів</h2>
+            <div class="reviews-carousel">
+                <article class="review-card">
+                    <p>"Неймовірна якість деревини! Стілець ідеально вписався у нашу світлу кухню."</p>
+                    <h4>— Олена Ковальчук</h4>
+                </article>
+                <article class="review-card">
+                    <p>"Замовляли латунний світильник та приліжкову тумбу. Швидка доставка та надійне пакування."</p>
+                    <h4>— Максим Бондаренко</h4>
+                </article>
+                <article class="review-card">
+                    <p>"Дуже приємний сервіс та мінімалістичний дизайн, якого так не вистачало в інтер'єрі."</p>
+                    <h4>— Ірина Савченко</h4>
+                </article>
+            </div>
+        </section>
+
+        <!-- 5. ОПИТУВАЛЬНИК -->
+        <section id="quiz">
+            <h2>Анкета: Підберіть ідеальний інтер'єр</h2>
+            <form action="#" method="post">
+                <label for="user-login">Ваш нікнейм:</label>
+                <input type="text" id="user-login" required placeholder="Введіть логін"><br><br>
+
+                <label for="user-email">Електронна пошта:</label>
+                <input type="email" id="user-email" required placeholder="your@email.com"><br><br>
+
+                <label for="user-style">Який стиль інтер'єру вам подобається?</label>
+                <select id="user-style">
+                    <option value="minimalism" selected>Мінімалізм (за замовчуванням)</option>
+                    <option value="scandi">Скандинавський</option>
+                    <option value="loft">Лофт</option>
+                </select><br><br>
+
+                <button type="submit">Надіслати анкету</button>
+                <button type="reset">Очистити форму</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- 6. ПІДВАЛ САЙТУ -->
+    <footer>
+        <p>&copy; 2026 Arusa Studio. Всі права захищені. Навігація вгору &and; та вниз &or;</p>
+    </footer>
+
+    <!-- Кнопка вгору -->
+    <a href="#top" class="scroll-top" title="Наверх">&#9650;</a>
+
+    <!-- 7. МОДАЛЬНЕ ВІКНО АВТОРИЗАЦІЇ -->
+    <div id="login-modal" class="modal-overlay">
+        <div class="modal-window">
+            <a href="#close" class="modal-close" title="Закрити">&times;</a>
+            <h2>Sign in</h2>
+            <form action="#" method="post">
+                <label for="m-email">Електронна пошта:</label>
+                <input type="email" id="m-email" required placeholder="example@mail.com">
+                
+                <label for="m-pass">Пароль:</label>
+                <input type="password" id="m-pass" required placeholder="Введіть пароль">
+                
+                <button type="submit">Увійти</button>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>

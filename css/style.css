@@ -1,0 +1,421 @@
+/* ==========================================================================
+   1. ЗМІННІ :root ТА БАЗОВІ СТИЛІ
+   ========================================================================== */
+:root {
+    --primary-color: #2b2b2b;
+    --accent-color: #bfa37a;
+    --bg-light: #f9f9f9;
+    --bg-card: #ffffff;
+    --font-main: 'Roboto', sans-serif;
+    --border-radius: 8px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-main);
+    color: var(--primary-color);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background-color: #ffffff;
+}
+
+h1, h2, h3 {
+    margin-top: 0;
+    font-weight: 700;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--accent-color);
+}
+
+/* ==========================================================================
+   2. ШАПКА САЙТУ, ВИПАДАЮЧЕ ПІДМЕНЮ ТА ПОШУК
+   ========================================================================== */
+header {
+    background-color: var(--bg-card);
+    padding: 1.5rem 10%;
+    border-bottom: 1px solid #eaeaea;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.logo {
+    font-weight: 700;
+    font-size: 1.4rem;
+}
+
+header nav ul.main-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 2rem;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--bg-card);
+    border: 1px solid #eaeaea;
+    border-radius: var(--border-radius);
+    padding: 0.5rem 0;
+    min-width: 150px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+    flex-direction: column;
+    list-style: none;
+}
+
+.dropdown:hover .submenu {
+    display: flex;
+}
+
+.submenu li a {
+    display: block;
+    padding: 0.5rem 1rem;
+}
+
+.submenu li a:hover {
+    background-color: var(--bg-light);
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.search-box form {
+    display: flex;
+    align-items: center;
+    padding: 0.25rem 0.5rem;
+    border-radius: 25px;
+    border: 1px solid #ccc;
+    background-color: #ffffff;
+}
+
+.search-box input[type="search"] {
+    border: none;
+    margin: 0;
+    padding: 0.4rem 0.8rem;
+    background: transparent;
+    outline: none;
+}
+
+.search-box button {
+    background: transparent;
+    color: var(--primary-color);
+    padding: 0.4rem 0.6rem;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+}
+
+.sign-in-btn, .btn-primary {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    padding: 0.6rem 1.2rem;
+    border-radius: var(--border-radius);
+    font-weight: 700;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+.sign-in-btn:hover, .btn-primary:hover {
+    background-color: var(--accent-color);
+    color: #ffffff;
+}
+
+/* ==========================================================================
+   3. ГОЛОВНИЙ БАНЕР, КАТАЛОГ ТОВАРІВ (GRID) ТА СПІНЕР
+   ========================================================================== */
+#home {
+    background-color: var(--bg-light);
+    padding: 5rem 10%;
+    text-align: center;
+}
+
+#home h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+#shop {
+    padding: 4rem 10%;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+
+.img-wrapper {
+    position: relative;
+    overflow: hidden;
+    border-radius: calc(var(--border-radius) - 2px);
+    margin-bottom: 1rem;
+    background-color: #dce4f0;
+}
+
+.img-wrapper img {
+    display: block;
+    width: 100%;
+    opacity: 0.25;
+    transition: opacity 0.4s ease;
+}
+.product-card {
+    background-color: var(--bg-card);
+    border: 1px solid #eaeaea;
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* Додаємо плавний перехід для анімації */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Картка плавно піднімається при наведенні мишки */
+.product-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+}
+
+.img-overlay {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: 700;
+    color: #5c769d;
+    text-align: center;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+}
+
+.img-wrapper:hover img {
+    opacity: 1;
+}
+
+.img-wrapper:hover .img-overlay {
+    opacity: 0;
+}
+
+.card-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+button {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-family: var(--font-main);
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: var(--accent-color);
+}
+
+/* ==========================================================================
+   4. КАРУСЕЛЬ ВІДГУКІВ ТА АНКЕТА
+   ========================================================================== */
+#reviews {
+    padding: 4rem 10%;
+    background-color: var(--bg-light);
+}
+
+.reviews-carousel {
+    display: flex;
+    gap: 1.5rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 1rem;
+}
+
+.review-card {
+    min-width: 300px;
+    flex: 1;
+    background-color: var(--bg-card);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    border: 1px solid #eaeaea;
+    scroll-snap-align: start;
+}
+
+.review-card h4 {
+    margin-bottom: 0;
+    color: var(--accent-color);
+}
+
+#quiz {
+    padding: 4rem 10%;
+}
+
+#quiz form {
+    background-color: var(--bg-light);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    max-width: 500px;
+}
+
+#quiz input[type="text"],
+#quiz input[type="email"],
+#quiz select {
+    width: 100%;
+    padding: 0.75rem;
+    margin-top: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: var(--border-radius);
+    box-sizing: border-box;
+    font-family: var(--font-main);
+}
+
+button[type="reset"] {
+    background-color: #e0e0e0;
+    color: var(--primary-color);
+    margin-left: 0.5rem;
+}
+
+/* ==========================================================================
+   5. ПІДВАЛ, КНОПКА ВГОРУ ТА МОДАЛЬНЕ ВІКНО (:target)
+   ========================================================================== */
+footer {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    text-align: center;
+    padding: 2rem;
+}
+
+.scroll-top {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    width: 45px;
+    height: 45px;
+    background-color: var(--primary-color);
+    color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.scroll-top:hover {
+    background-color: var(--accent-color);
+    color: #ffffff;
+    transform: scale(1.1);
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+.modal-overlay:target {
+    display: flex;
+}
+
+.modal-window {
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    position: relative;
+    max-width: 400px;
+    width: 90%;
+    animation: fadeIn 0.3s ease;
+}
+
+.modal-window input {
+    width: 100%;
+    padding: 0.75rem;
+    margin: 0.5rem 0 1rem;
+    border: 1px solid #ccc;
+    border-radius: var(--border-radius);
+    box-sizing: border-box;
+}
+
+.modal-close {
+    position: absolute;
+    top: 10px; right: 15px;
+    font-size: 1.8rem;
+    line-height: 1;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ==========================================================================
+   6. АДАПТИВНЕ БУРГЕР-МЕНЮ ТА ФІКСОВАНА КНОПКА SIGN IN
+   ========================================================================== */
+#menu-toggle, .burger-icon {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .burger-icon {
+        display: block;
+        font-size: 1.8rem;
+        cursor: pointer;
+    }
+
+    header nav {
+        width: 100%;
+        order: 3;
+    }
+
+    header nav ul.main-menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        padding-top: 1rem;
+    }
+
+    #menu-toggle:checked ~ nav ul.main-menu {
+        display: flex;
+    }
+
+    .sign-in-btn {
+        position: fixed;
+        top: 15px;
+        right: 15px;
+        z-index: 1500;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+}
