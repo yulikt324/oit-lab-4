@@ -1,8 +1,24 @@
+.review-card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    border: 1px solid #eaeaea;
+    padding: 2rem;
+}
+
 .promo-banner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     background-color: #bfa37a;
     color: #ffffff;
     text-align: center;
     padding: 2.5rem 10%;
+    transition: background-color 0.3s ease;
+}
+
+.promo-banner:hover {
+    background-color: #a88d65;
 }
 
 .promo-banner h2 {
@@ -15,4 +31,13 @@
 .promo-banner p {
     margin: 0;
     font-size: 1.1rem;
+}
+
+.review-card {
+    transition: transform 0.3s ease;
+}
+
+.review-card:hover {
+    transform: translateY(-4px);
+    border-color: #bfa37a;
 }
