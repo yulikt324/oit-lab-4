@@ -7,53 +7,53 @@ $radius: 8px;
 
 // Міксин для флекс-контейнерів
 @mixin flex-box($direction: row, $justify: center, $align: center) {
-display: flex;
-flex-direction: $direction;
-justify-content: $justify;
-align-items: $align;
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
 }
 
 // Шаблон для наслідування (@extend)
 %card-base {
-background-color: $white;
-border-radius: $radius;
-border: 1px solid #eaeaea;
-padding: $base-padding;
+    background-color: $white;
+    border-radius: $radius;
+    border: 1px solid #eaeaea;
+    padding: $base-padding;
 }
 
 // Вкладеність селекторів, псевдокласи (&) та математика
 .promo-banner {
-@include flex-box(column, center, center);
-background-color: $brand-beige;
-color: $white;
-text-align: center;
-padding: ($base-padding + 0.5rem) 10%;
-transition: background-color 0.3s ease;
+    @include flex-box(column, center, center);
+    background-color: $brand-beige;
+    color: $white;
+    text-align: center;
+    padding: ($base-padding + 0.5rem) 10%;
+    transition: background-color 0.3s ease;
 
-&:hover {
-background-color: #a88d65;
-}
+    &:hover {
+        background-color: #a88d65;
+    }
 
-h2 {
-color: $brand-dark;
-margin-bottom: $base-padding / 4;
-text-transform: uppercase;
-letter-spacing: 1px;
-}
+    h2 {
+        color: $brand-dark;
+        margin-bottom: $base-padding / 4;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
 
-p {
-margin: 0;
-font-size: 1.1rem;
-}
+    p {
+        margin: 0;
+        font-size: 1.1rem;
+    }
 }
 
 // Наслідування для карток відгуків
 .review-card {
-@extend %card-base;
-transition: transform 0.3s ease;
+    @extend %card-base;
+    transition: transform 0.3s ease;
 
-&:hover {
-transform: translateY(-4px);
-border-color: $brand-beige;
-}
+    &:hover {
+        transform: translateY(-4px);
+        border-color: $brand-beige;
+    }
 }
